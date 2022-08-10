@@ -23,20 +23,25 @@ Can visualise the problem by considering the following diagram from [3].
 ![control loop diagram](./vision_based_control_diagram.png "Vision based control diagram") 
 
 ## Design Considerations
-***placeholder***
 
 ### Assumptions
+- The problem solution will not consider control of the aircraft. Closed loop control of the aircraft is implied via the landing profile.
+- Solution to the first part of the case study involves a linear kalman filter for estimation of the aircraft height above ground. 
+- Solution to the second part of the case study involves a non-linear kalman filter for estimation of the aircraft height above ground. 
+- Due to absence of vehicle characteristics, information required for simulation/KF implementation will be derived from existing literature. 
+- In the interest of time, third party C++ libraries may be utilised for non-core aspects of the case study i.e. matrix algebra (e.g. Eigen Library), plotting (e.g. GNUPlot Library).
 
 ### Constraints
-
-### System Environment
+- C++ compiler will be either GCC/Clang -- tested on MacOS Big Sur (v11.6.8)
+- The simulation data (e.g. duration of each landing phase) may be adjusted from within the simulation class.
+- 
 
 ## Architectural Design
-***placeholder***
 
 ### Component Diagram
 
 ### Deployment Diagram
+- N/A...
 
 ## Low-Level Design
 
