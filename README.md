@@ -30,11 +30,13 @@ Can visualise the problem by considering the following diagram from [3].
 - Solution to the second part of the case study involves a non-linear kalman filter for estimation of the aircraft height above ground. 
 - Due to absence of vehicle characteristics, information required for simulation/KF implementation will be derived from existing literature. 
 - In the interest of time, third party C++ libraries may be utilised for non-core aspects of the case study i.e. matrix algebra (e.g. Eigen Library), plotting (e.g. GNUPlot Library).
+- SI units will be utilised throughout the case study
+- Measurement/clock cycle for the vehicle is assumed to be 100ms for ease of computation. This sampling rate may not be representative of the actual vehicle.
 
 ### Constraints
 - C++ compiler will be either GCC/Clang -- tested on MacOS Big Sur (v11.6.8)
 - The simulation data (e.g. duration of each landing phase) may be adjusted from within the simulation class.
-- 
+- For ease of computation, the landing sequence can complete within 30min.
 
 ## Architectural Design
 
