@@ -26,17 +26,17 @@ Can visualise the problem by considering the following diagram from [3].
 
 ### Assumptions
 - The problem solution will not consider control of the aircraft. Closed loop control of the aircraft is implied via the landing profile.
-- Solution to the first part of the case study involves a linear kalman filter for estimation of the aircraft height above ground. 
-- Solution to the second part of the case study involves a non-linear kalman filter for estimation of the aircraft height above ground. 
-- Due to absence of vehicle characteristics, information required for simulation/KF implementation will be derived from existing literature. 
-- In the interest of time, third party C++ libraries may be utilised for non-core aspects of the case study i.e. matrix algebra (e.g. Eigen Library), plotting (e.g. GNUPlot Library).
-- SI units will be utilised throughout the case study
-- Measurement/clock cycle for the vehicle is assumed to be 100ms for ease of computation. This sampling rate may not be representative of the actual vehicle.
+- Due to absence of vehicle characteristics, information required for simulation/KF implementation will be derived from existing literature.
+- SI units will be utilised throughout the case study.
+- Measurement/clock cycle for the vehicle is chosen to be 100ms for ease of computation. This sampling rate may not be representative of the actual vehicle. 
 
 ### Constraints
-- C++ compiler will be either GCC/Clang -- tested on MacOS Big Sur (v11.6.8)
+- Solution to the first part of the case study involves a linear kalman filter for estimation of the aircraft height above ground since the vehicle is in "hover" state during landing.
+- Solution to the second part of the case study involves a non-linear kalman filter for estimation of the aircraft height above ground. 
 - The simulation data (e.g. duration of each landing phase) may be adjusted from within the simulation class.
-- For ease of computation, the landing sequence can complete within 30min.
+- For ease of computation, the landing sequence can complete within 30min. This is an arbitrary value. 
+- In the interest of time, third party C++ libraries may be utilised for non-core aspects of the case study e.g. for matrix algebra (e.g. Eigen Library) and for plotting (e.g. GNUPlot/matplot++ libraries). [4]
+- Code has been tested with C++23/2b compiler standard / Apple Clang version 13.0.0 -- tested on MacOS Big Sur (v11.6.8) [5]
 
 ## Architectural Design
 
@@ -53,3 +53,6 @@ Can visualise the problem by considering the following diagram from [3].
 [1] [State Space Representation](https://en.wikipedia.org/wiki/State-space_representation)
 [2] [Full Linear Control of a Quadrotor UAV, LQ vs H∞](https://sci-hub.se/10.1109/control.2014.6915128)
 [3] [Modeling and PD Control of a Quadrotor VTOL Vehicle](https://www.researchgate.net/publication/224719830)
+[4] [gnuplot-cpp](https://code.google.com/archive/p/gnuplot-cpp/)
+[5] [C++ Compiler Support](https://en.cppreference.com/w/cpp/compiler_support)
+

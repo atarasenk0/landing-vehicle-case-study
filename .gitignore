@@ -34,4 +34,6 @@
 # Other
 .vscode/
 *.dSYM
+*.ps
 case-study-main
+.DS_Store
