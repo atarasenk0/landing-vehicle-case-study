@@ -5,14 +5,17 @@ This readme is designed to keep a log of my progress as I work through the real 
 
 ## Problem Overview
 - see case study document...
+- Localisation problem in continuously-defined space
+- Outcome requires a unimodal estimate of the target position
 
 ## Problem Breakdown
-- Identify/generate a potential state space model to model the Swoop Aero vehicle
-- Generate test-data  to simulate the vehicle in cartesian coordinates during each landing phase
-- Implement a visualiser in order to visualise the above [x,y,z] vehicle information
-- Implement KF to estimate height of the vehicle relative to ground
+Step 1: Identify/generate a potential state space model to model the Swoop Aero vehicle
+Step 2: Generate test-data to simulate the vehicle in cartesian coordinates during each landing phase
+	- Amend this idealised simulation data by introducing typical lida errors
+Step 3: Implement a visualiser in order to visualise the above [x,y,z] vehicle information
+Step 4: Implement KF to estimate height of the vehicle relative to ground
 	- May be able to get away with a linear KF since each of the landing phases is linear... ?
-- Extend the model by addressing "bonus points" requirements
+Step 5: Extend the model by addressing "bonus points" requirements
 	- This seems to be an extension of the KF model to be non-linear domain... Possibly EKF?
 
 Can visualise the problem by considering the following diagram from [3].
@@ -31,11 +34,11 @@ Can visualise the problem by considering the following diagram from [3].
 - Measurement/clock cycle for the vehicle is chosen to be 100ms for ease of computation. This sampling rate may not be representative of the actual vehicle. 
 
 ### Constraints
-- Solution to the first part of the case study involves a linear kalman filter for estimation of the aircraft height above ground since the vehicle is in "hover" state during landing.
-- Solution to the second part of the case study involves a non-linear kalman filter for estimation of the aircraft height above ground. 
+- Solution to the first part of the case study involves a linear kalman filter for estimation of the aircraft height above ground since the vehicle is in "hover" state during landing.[2]
+- Solution to the second part of the case study involves a non-linear kalman filter for estimation of the aircraft height above ground.[2]
 - The simulation data (e.g. duration of each landing phase) may be adjusted from within the simulation class.
 - For ease of computation, the landing sequence can complete within 30min. This is an arbitrary value. 
-- In the interest of time, third party C++ libraries may be utilised for non-core aspects of the case study e.g. for matrix algebra (e.g. Eigen Library) and for plotting (e.g. GNUPlot/matplot++ libraries). [4]
+- In the interest of time, third party C++ libraries may be utilised for non-core aspects of the case study e.g. for matrix algebra (e.g. Eigen Library) and for plotting (e.g. GNUPlot/matplot++ libraries). [4][6]
 - Code has been tested with C++23/2b compiler standard / Apple Clang version 13.0.0 -- tested on MacOS Big Sur (v11.6.8) [5]
 
 ## Architectural Design
@@ -55,4 +58,6 @@ Can visualise the problem by considering the following diagram from [3].
 [3] [Modeling and PD Control of a Quadrotor VTOL Vehicle](https://www.researchgate.net/publication/224719830)
 [4] [gnuplot-cpp](https://code.google.com/archive/p/gnuplot-cpp/)
 [5] [C++ Compiler Support](https://en.cppreference.com/w/cpp/compiler_support)
+[6] [Eigen 3.4.0](https://gitlab.com/libeigen/eigen/-/releases/3.4.0)
+[7] [Kalman Filter Overview](https://www.kalmanfilter.net/default.aspx)
 
