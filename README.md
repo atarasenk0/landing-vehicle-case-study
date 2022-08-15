@@ -11,10 +11,10 @@ This readme is designed to keep a log of my progress as I work through the real 
 ## Problem Breakdown
 Step 1: Identify/generate a potential state space model to model the Swoop Aero vehicle <br/>
 Step 2: Generate test-data to simulate the vehicle in cartesian coordinates during each landing phase <br/>
-	- Amend this idealised simulation data by introducing typical lida errors
+	- Amend this idealised simulation data by introducing typical lida errors <br/>
 Step 3: Implement a visualiser in order to visualise the above [x,y,z] vehicle information <br/>
 Step 4: Implement KF to estimate height of the vehicle relative to ground <br/>
-	- May be able to get away with a linear KF since each of the landing phases is linear... ?
+	- May be able to get away with a linear KF since each of the landing phases is linear... ? <br/>
 Step 5: Extend the model by addressing "bonus points" requirements <br/>
 	- This seems to be an extension of the KF model to be non-linear domain... Possibly EKF?
 
