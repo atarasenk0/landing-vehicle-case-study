@@ -5,17 +5,17 @@ This readme is designed to keep a log of my progress as I work through the real 
 
 ## Problem Overview
 - see case study document...
-- Localisation problem in continuously-defined space
+- Localisation problem in a continuously-defined space
 - Outcome requires a unimodal estimate of the target position
 
 ## Problem Breakdown
-Step 1: Identify/generate a potential state space model to model the Swoop Aero vehicle
-Step 2: Generate test-data to simulate the vehicle in cartesian coordinates during each landing phase
+Step 1: Identify/generate a potential state space model to model the Swoop Aero vehicle <br/>
+Step 2: Generate test-data to simulate the vehicle in cartesian coordinates during each landing phase <br/>
 	- Amend this idealised simulation data by introducing typical lida errors
-Step 3: Implement a visualiser in order to visualise the above [x,y,z] vehicle information
-Step 4: Implement KF to estimate height of the vehicle relative to ground
+Step 3: Implement a visualiser in order to visualise the above [x,y,z] vehicle information <br/>
+Step 4: Implement KF to estimate height of the vehicle relative to ground <br/>
 	- May be able to get away with a linear KF since each of the landing phases is linear... ?
-Step 5: Extend the model by addressing "bonus points" requirements
+Step 5: Extend the model by addressing "bonus points" requirements <br/>
 	- This seems to be an extension of the KF model to be non-linear domain... Possibly EKF?
 
 Can visualise the problem by considering the following diagram from [3].
@@ -51,13 +51,14 @@ Can visualise the problem by considering the following diagram from [3].
 ## Low-Level Design
 
 ### Class Diagram
+![control loop diagram](./class_diagram.png "Class diagram") 
 
 ## References
-[1] [State Space Representation](https://en.wikipedia.org/wiki/State-space_representation)
-[2] [Full Linear Control of a Quadrotor UAV, LQ vs H∞](https://sci-hub.se/10.1109/control.2014.6915128)
-[3] [Modeling and PD Control of a Quadrotor VTOL Vehicle](https://www.researchgate.net/publication/224719830)
-[4] [gnuplot-cpp](https://code.google.com/archive/p/gnuplot-cpp/)
-[5] [C++ Compiler Support](https://en.cppreference.com/w/cpp/compiler_support)
-[6] [Eigen 3.4.0](https://gitlab.com/libeigen/eigen/-/releases/3.4.0)
-[7] [Kalman Filter Overview](https://www.kalmanfilter.net/default.aspx)
+- [1] [State Space Representation](https://en.wikipedia.org/wiki/State-space_representation)
+- [2] [Full Linear Control of a Quadrotor UAV, LQ vs H∞](https://sci-hub.se/10.1109/control.2014.6915128)
+- [3] [Modeling and PD Control of a Quadrotor VTOL Vehicle](https://www.researchgate.net/publication/224719830)
+- [4] [gnuplot-cpp](https://code.google.com/archive/p/gnuplot-cpp/)
+- [5] [C++ Compiler Support](https://en.cppreference.com/w/cpp/compiler_support)
+- [6] [Eigen 3.4.0](https://gitlab.com/libeigen/eigen/-/releases/3.4.0)
+- [7] [Kalman Filter Overview](https://www.kalmanfilter.net/default.aspx)
 
